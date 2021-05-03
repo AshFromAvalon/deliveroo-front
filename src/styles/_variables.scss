@@ -1,0 +1,21 @@
+// FONTS IMPORTS
+@font-face {
+  font-family: "IBMPlexSans-Regular";
+  src: url("../assets/fonts/IBMPlexSans-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "IBMPlexSans-Bold";
+  src: url("../assets/fonts/IBMPlexSans-Bold.ttf") format("truetype");
+}
+
+// COLORS
+$prim-green: #01cdbd;
+$prim-black: #2e3333;
+$prim-grey: #808484;
+$prim-orange: #ff8000;
+$bg-grey: #f2f5f5;
+$brd-grey: #e8ebeb;
+
+// FONTS
+$font-main: "IBMPlexSans-Regular", sans-serif;
+$font-title: "IBMPlexSans-Bold", sans-serif;

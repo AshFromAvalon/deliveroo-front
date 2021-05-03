@@ -1,0 +1,40 @@
+@import "../../styles/styles.scss";
+
+.top {
+  height: 60px;
+  border-bottom: 2px solid $brd-grey;
+  .top--container {
+    @include container;
+    display: flex;
+    align-items: flex-end;
+  }
+  .top-logo {
+    height: 55px;
+  }
+}
+
+.restaurant {
+  .restaurant--container {
+    @include container;
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+  }
+  .restaurant-title {
+    font-family: $font-title;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: $prim-black;
+  }
+  .restaurant-description {
+    font-family: $font-main;
+    font-size: 19px;
+    color: $prim-grey;
+    line-height: 2;
+  }
+  .restaurant-pic {
+    width: 350px;
+    margin-left: 30px;
+    border-radius: 5px;
+  }
+}
