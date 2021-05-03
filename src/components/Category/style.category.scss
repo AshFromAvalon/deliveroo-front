@@ -1,0 +1,16 @@
+@import "../../styles/styles.scss";
+
+.category:not(:first-child) {
+  margin-top: 50px;
+}
+.category-title {
+  font-family: $font-title;
+  font-size: 1.5rem;
+  color: $prim-black;
+}
+.menu-item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0;
+}

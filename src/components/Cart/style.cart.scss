@@ -1,0 +1,44 @@
+@import "../../styles/styles.scss";
+
+.cart {
+  width: 350px;
+  height: 200px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 10px 10px 1px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  .cart-cta {
+    background-color: $prim-green;
+    border: none;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 5px;
+    font-family: $font-title;
+    font-size: 1rem;
+    color: white;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+  }
+  .cart-cta--disabled {
+    border: none;
+    width: 100%;
+    padding: 16px 0;
+    border-radius: 5px;
+    font-family: $font-title;
+    font-size: 1rem;
+    cursor: not-allowed;
+    background: #bac3c3;
+    color: #8b9a9b;
+  }
+
+  .cart-text {
+    font-family: $font-main;
+    color: $prim-grey;
+    margin-top: 50px;
+    text-align: center;
+  }
+}

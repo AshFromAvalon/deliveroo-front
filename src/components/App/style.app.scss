@@ -1,9 +1,17 @@
 @import "../../styles/styles.scss";
-
-div {
-  background-color: white;
-}
-
 body {
   background-color: $bg-grey;
+}
+
+.content {
+  margin-top: 30px;
+  .content-center {
+    @include container;
+    display: flex;
+  }
+}
+
+.menu {
+  width: 850px;
+  padding-right: 20px;
 }

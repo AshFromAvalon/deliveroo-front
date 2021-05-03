@@ -3,6 +3,7 @@
 .top {
   height: 60px;
   border-bottom: 2px solid $brd-grey;
+  background-color: white;
   .top--container {
     @include container;
     display: flex;
@@ -14,6 +15,7 @@
 }
 
 .restaurant {
+  background-color: white;
   .restaurant--container {
     @include container;
     display: flex;

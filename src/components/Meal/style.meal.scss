@@ -1,0 +1,52 @@
+@import "../../styles/styles.scss";
+
+.meal-card {
+  display: flex;
+  width: 400px;
+  background-color: white;
+  padding: 16px;
+  margin: 10px 0;
+  border-radius: 5px;
+  .meal-card-content {
+    margin-right: 10px;
+    .meal-card-title {
+      font-family: $font-main;
+      font-size: 18px;
+      color: $prim-black;
+    }
+    .meal-card-description {
+      font-family: $font-light;
+      color: $prim-grey;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      max-height: 40px;
+      overflow: hidden;
+      margin: 10px 0 20px 0;
+    }
+    .meal-card-infos {
+      display: flex;
+      align-items: center;
+    }
+    .meal-card-price {
+      font-family: $font-main;
+      color: $prim-grey;
+      font-size: 18px;
+    }
+    .meal-card-popular {
+      font-family: $font-title;
+      color: $prim-orange;
+      font-size: 14px;
+      margin-left: 20px;
+      display: flex;
+      .meal-card-popular-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+  .meal-card-pic {
+    height: 130px;
+    width: 130px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+}

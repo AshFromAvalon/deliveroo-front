@@ -1,6 +1,8 @@
 import "./style.app.scss";
 import { useState, useEffect } from "react";
 import Header from "../Header";
+import Category from "../Category";
+import Cart from "../Cart";
 
 const axios = require("axios");
 
@@ -22,16 +24,30 @@ function App() {
     fetchData();
   }, []);
 
-  const { restaurant, category } = data;
+  const { restaurant, categories } = data;
 
   return isLoading ? (
     <div>Loading...</div>
   ) : (
-    <Header
-      name={restaurant.name}
-      description={restaurant.description}
-      cover={restaurant.picture}
-    />
+    <div>
+      <Header
+        name={restaurant.name}
+        description={restaurant.description}
+        cover={restaurant.picture}
+      />
+      <div className="content">
+        <div className="content-center">
+          <div className="menu">
+            {categories
+              .filter((category) => category.meals.length >= 1)
+              .map((category) => {
+                return <Category name={category.name} meals={category.meals} />;
+              })}
+          </div>
+          <Cart />
+        </div>
+      </div>
+    </div>
   );
 }
 
