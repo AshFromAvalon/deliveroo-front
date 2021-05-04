@@ -27,8 +27,10 @@ const Cart = ({ cartLines, setCartLines }) => {
 
   return cartLines.length <= 0 ? (
     <div className="cart">
-      <button className="cart-cta--disabled">Valider mon panier</button>
-      <p className="cart-text">Votre panier est vide</p>
+      <div className="cart-container">
+        <button className="cart-cta--disabled">Valider mon panier</button>
+        <p className="cart-text">Votre panier est vide</p>
+      </div>
     </div>
   ) : (
     <div className="cart">
