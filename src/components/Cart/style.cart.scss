@@ -7,6 +7,7 @@
   border-radius: 5px;
   box-shadow: 0 22px 24px 0 rgba(46, 51, 51, 0.07);
   padding: 20px;
+
   .cart-cta {
     background-color: $prim-green;
     border: none;
@@ -16,6 +17,7 @@
     font-family: $font-title;
     font-size: 1rem;
     color: white;
+    margin-bottom: 10px;
     &:hover {
       cursor: pointer;
     }
@@ -23,6 +25,7 @@
       opacity: 0.7;
     }
   }
+
   .cart-cta--disabled {
     border: none;
     width: 100%;
@@ -40,5 +43,30 @@
     color: $prim-grey;
     margin-top: 50px;
     text-align: center;
+  }
+
+  .cart-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    .cart-line-counter {
+      display: flex;
+      align-items: flex-start;
+
+      .cart-line-counter--title {
+        font-family: $font-main;
+        color: $prim-black;
+        font-size: 16px;
+        margin-left: 10px;
+        max-width: 180px;
+      }
+    }
+
+    .cart-line-price {
+      font-family: $font-main;
+      color: $prim-black;
+      font-size: 16px;
+    }
   }
 }

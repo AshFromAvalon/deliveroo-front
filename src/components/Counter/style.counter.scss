@@ -1,0 +1,33 @@
+@import "../../styles/styles.scss";
+
+.counter {
+  display: flex;
+  align-items: center;
+
+  .counter-count {
+    margin: 0 5px;
+    font-family: $font-main;
+    font-size: 14px;
+  }
+
+  .counter-btn {
+    border: 2px solid $prim-green;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      opacity: 0.7;
+    }
+
+    .counter-btn--icon {
+      color: $prim-green;
+      font-size: 10px;
+    }
+  }
+}

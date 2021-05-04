@@ -1,5 +1,7 @@
 import "./style.app.scss";
+
 import { useState, useEffect } from "react";
+
 import Header from "../Header";
 import Category from "../Category";
 import Cart from "../Cart";
@@ -10,9 +12,15 @@ import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 const axios = require("axios");
 
 function App() {
+  // Sates
+  // API
   const [data, setData] = useState({});
+  // Loading state for UseEffect
   const [isLoading, setisLoading] = useState(true);
+  // Array for Cart component
+  const [cartLines, setCartLines] = useState([]);
 
+  // Fetch data
   const fetchData = async () => {
     try {
       const response = await axios.get(
@@ -25,22 +33,27 @@ function App() {
     }
   };
 
+  // Fetch data on compoentn mount
   useEffect(() => {
     fetchData();
   }, []);
 
+  // destructure data
   const { restaurant, categories } = data;
 
+  // Icon component
   const iconSpinner = (
     <FontAwesomeIcon icon={faSpinner} className="loading-state--icon" spin />
   );
 
   return isLoading ? (
+    // Loading state
     <div className="loading-state">
       {iconSpinner}
       <span className="loading-state--text">Loading...</span>
     </div>
   ) : (
+    // Page when data is loaded
     <div>
       <Header
         name={restaurant.name}
@@ -58,11 +71,13 @@ function App() {
                     key={index}
                     name={category.name}
                     meals={category.meals}
+                    cartLines={cartLines}
+                    setCartLines={setCartLines}
                   />
                 );
               })}
           </div>
-          <Cart />
+          <Cart cartLines={cartLines} />
         </div>
       </div>
     </div>
