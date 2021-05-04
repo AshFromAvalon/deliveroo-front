@@ -21,22 +21,39 @@
     display: flex;
     align-items: center;
     padding: 30px 0;
+
+    @media (max-width: 950px) {
+      padding: 20px 0;
+      justify-content: center;
+    }
   }
   .restaurant-title {
     font-family: $font-title;
     font-size: 2rem;
     margin-bottom: 30px;
     color: $prim-black;
+    @media (max-width: 950px) {
+      margin-bottom: 0px;
+    }
   }
   .restaurant-description {
     font-family: $font-main;
     font-size: 19px;
     color: $prim-grey;
     line-height: 2;
+    @media (max-width: 1080px) {
+      line-height: 1;
+    }
+    @media (max-width: 950px) {
+      display: none;
+    }
   }
   .restaurant-pic {
     width: 350px;
     margin-left: 30px;
     border-radius: 5px;
+    @media (max-width: 950px) {
+      display: none;
+    }
   }
 }

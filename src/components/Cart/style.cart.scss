@@ -11,6 +11,11 @@
     padding: 20px;
     position: sticky;
     top: 30px;
+    @media (max-width: 750px) {
+      width: 100%;
+      position: fixed;
+      top: calc(100vh - 250px);
+    }
   }
 
   .cart-cta {

@@ -8,12 +8,21 @@ body {
   .content-center {
     @include container;
     display: flex;
+
+    @media (max-width: 750px) {
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
   }
 }
 
 .menu {
   width: 850px;
   padding-right: 20px;
+  @media (max-width: 750px) {
+    width: 100%;
+    padding-right: 0px;
+  }
 }
 
 .loading-state {
