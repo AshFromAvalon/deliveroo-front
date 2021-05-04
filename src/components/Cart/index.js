@@ -8,15 +8,15 @@ const Cart = ({ cartLines, setCartLines }) => {
     if (cartLines.length > 1) {
       const prices = cartLines.map((line) => parseFloat(line.price));
       const sum = prices.reduce((acc, curr) => (acc += curr));
-      return sum.toFixed(2).replace(".", ",");
+      return parseFloat(sum).toFixed(2);
     } else {
-      return parseFloat(cartLines[0].price).toFixed(2).replace(".", ",");
+      return parseFloat(cartLines[0].price).toFixed(2);
     }
   };
 
   const total = (shippingFee) => {
-    const sum = subTotal() + shippingFee;
-    return parseFloat(sum).toFixed(2).replace(".", ",");
+    const sum = parseFloat(subTotal()) + shippingFee;
+    return sum.toFixed(2);
   };
 
   const shippingFee = 2.5;
@@ -54,7 +54,7 @@ const Cart = ({ cartLines, setCartLines }) => {
       <div className="cart-sub-total">
         <div className="cart-sub-total--sum">
           <span>Sous-total</span>
-          <span>{subTotal()} €</span>
+          <span>{subTotal().replace(".", ",")} €</span>
         </div>
         <div className="cart-sub-total--fee">
           <span>Frais de livraison</span>
@@ -64,7 +64,7 @@ const Cart = ({ cartLines, setCartLines }) => {
 
       <div className="cart-total">
         <span>Total</span>
-        <span>{total(shippingFee)} €</span>
+        <span>{total(shippingFee).replace(".", ",")} €</span>
       </div>
     </div>
   );
