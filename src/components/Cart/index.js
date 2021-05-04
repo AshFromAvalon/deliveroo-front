@@ -4,16 +4,17 @@ import Counter from "../Counter/index";
 const Cart = ({ cartLines }) => {
   const subTotal = () => {
     if (cartLines.length > 1) {
-      const prices = cartLines.map((line) => Number(line.price));
+      const prices = cartLines.map((line) => parseFloat(line.price));
       const sum = prices.reduce((acc, curr) => (acc += curr));
-      return sum;
+      return sum.toFixed(2).replace(".", ",");
     } else {
-      return Number(cartLines[0].price);
+      return parseFloat(cartLines[0].price).toFixed(2).replace(".", ",");
     }
   };
 
-  const Total = (shippingFee) => {
-    return subTotal() + shippingFee;
+  const total = (shippingFee) => {
+    const sum = subTotal() + shippingFee;
+    return parseFloat(sum).toFixed(2).replace(".", ",");
   };
 
   const shippingFee = 2.5;
@@ -33,22 +34,27 @@ const Cart = ({ cartLines }) => {
               <Counter cartLines={cartLines} />
               <span className="cart-line-counter--title">{line.title}</span>
             </div>
-            <span className="cart-line-price">{line.price} €</span>
+            <span className="cart-line-price">
+              {line.price.replace(".", ",")} €
+            </span>
           </div>
         );
       })}
 
-      <div className="sub-total">
-        <div className="sub-total--sum">
+      <div className="cart-sub-total">
+        <div className="cart-sub-total--sum">
           <span>Sous-total</span>
-          <span>{subTotal}</span>
+          <span>{subTotal()} €</span>
         </div>
-        <span>Frais de livraison</span>
+        <div className="cart-sub-total--fee">
+          <span>Frais de livraison</span>
+          <span>{shippingFee.toFixed(2).replace(".", ",")} €</span>
+        </div>
       </div>
 
-      <div className="total">
+      <div className="cart-total">
         <span>Total</span>
-        <span>{() => Total()}</span>
+        <span>{total(shippingFee)} €</span>
       </div>
     </div>
   );
