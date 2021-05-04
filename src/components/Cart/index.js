@@ -48,7 +48,7 @@ const Cart = ({ cartLines }) => {
 
       <div className="total">
         <span>Total</span>
-        <span>{shippingFee}</span>
+        <span>{() => Total()}</span>
       </div>
     </div>
   );
