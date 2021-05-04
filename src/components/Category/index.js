@@ -7,7 +7,7 @@ const Category = ({ name, meals }) => {
       <h2 className="category-title">{name}</h2>
       <div className="menu-item">
         {meals.map((meal) => {
-          return <Meal {...meal} />;
+          return <Meal key={meal.id} {...meal} />;
         })}
       </div>
     </div>

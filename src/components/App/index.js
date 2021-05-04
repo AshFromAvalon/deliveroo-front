@@ -52,8 +52,14 @@ function App() {
           <div className="menu">
             {categories
               .filter((category) => category.meals.length >= 1)
-              .map((category) => {
-                return <Category name={category.name} meals={category.meals} />;
+              .map((category, index) => {
+                return (
+                  <Category
+                    key={index}
+                    name={category.name}
+                    meals={category.meals}
+                  />
+                );
               })}
           </div>
           <Cart />
