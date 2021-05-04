@@ -1,7 +1,9 @@
 import "./style.cart.scss";
 import Counter from "../Counter/index";
+import { useState } from "react";
+import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
-const Cart = ({ cartLines }) => {
+const Cart = ({ cartLines, setCartLines }) => {
   const subTotal = () => {
     if (cartLines.length > 1) {
       const prices = cartLines.map((line) => parseFloat(line.price));
@@ -19,6 +21,10 @@ const Cart = ({ cartLines }) => {
 
   const shippingFee = 2.5;
 
+  const uniqueCartLines = cartLines.filter(
+    (line, index) => cartLines.indexOf(line) === index
+  );
+
   return cartLines.length <= 0 ? (
     <div className="cart">
       <button className="cart-cta--disabled">Valider mon panier</button>
@@ -27,11 +33,15 @@ const Cart = ({ cartLines }) => {
   ) : (
     <div className="cart">
       <button className="cart-cta">Valider mon panier</button>
-      {cartLines.map((line) => {
+      {uniqueCartLines.map((line) => {
         return (
           <div key={line.id} className="cart-line">
             <div className="cart-line-counter">
-              <Counter cartLines={cartLines} />
+              <Counter
+                cartLines={cartLines}
+                setCartLines={setCartLines}
+                line={line}
+              />
               <span className="cart-line-counter--title">{line.title}</span>
             </div>
             <span className="cart-line-price">

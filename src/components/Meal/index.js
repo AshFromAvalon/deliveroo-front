@@ -33,7 +33,7 @@ const Meal = ({
   return (
     <div
       className="meal-card"
-      onClick={() => handleClick({ id, title, price })}
+      onClick={() => handleClick({ id, title, price, quantity: 1 })}
     >
       <div className="meal-card-content">
         <h3 className="meal-card-title">{title}</h3>

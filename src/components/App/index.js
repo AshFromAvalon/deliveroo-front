@@ -19,7 +19,6 @@ function App() {
   const [isLoading, setisLoading] = useState(true);
   // Array for Cart component
   const [cartLines, setCartLines] = useState([]);
-
   // Fetch data
   const fetchData = async () => {
     try {
@@ -77,7 +76,7 @@ function App() {
                 );
               })}
           </div>
-          <Cart cartLines={cartLines} />
+          <Cart cartLines={cartLines} setCartLines={setCartLines} />
         </div>
       </div>
     </div>
