@@ -15,3 +15,25 @@ body {
   width: 850px;
   padding-right: 20px;
 }
+
+.loading-state {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: $bg-grey;
+
+  .loading-state--icon {
+    color: $prim-green;
+    font-size: 4rem;
+    margin: 20px;
+  }
+
+  .loading-state--text {
+    color: $prim-green;
+    font-family: $font-main;
+    font-size: 1.5rem;
+  }
+}

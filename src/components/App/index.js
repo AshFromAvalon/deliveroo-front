@@ -4,6 +4,9 @@ import Header from "../Header";
 import Category from "../Category";
 import Cart from "../Cart";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+
 const axios = require("axios");
 
 function App() {
@@ -12,7 +15,9 @@ function App() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3200/");
+      const response = await axios.get(
+        "https://react-deliveroo-back.herokuapp.com/"
+      );
       setData(response.data);
       setisLoading(false);
     } catch (error) {
@@ -26,8 +31,15 @@ function App() {
 
   const { restaurant, categories } = data;
 
+  const iconSpinner = (
+    <FontAwesomeIcon icon={faSpinner} className="loading-state--icon" spin />
+  );
+
   return isLoading ? (
-    <div>Loading...</div>
+    <div className="loading-state">
+      {iconSpinner}
+      <span className="loading-state--text">Loading...</span>
+    </div>
   ) : (
     <div>
       <Header
