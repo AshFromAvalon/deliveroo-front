@@ -11,6 +11,8 @@
     padding: 20px;
     position: sticky;
     top: 30px;
+    @media (max-width: 1080px) {
+    }
     @media (max-width: 750px) {
       border-top: 1px solid $sec-grey;
       width: 100%;
