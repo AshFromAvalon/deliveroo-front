@@ -12,9 +12,14 @@
     position: sticky;
     top: 30px;
     @media (max-width: 750px) {
+      border-top: 1px solid $sec-grey;
       width: 100%;
       position: fixed;
-      top: calc(100vh - 250px);
+      top: calc(100vh - 134px);
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 -10px 24px 0 rgba(46, 51, 51, 0.07);
     }
   }
 
@@ -32,6 +37,10 @@
     }
     &:active {
       opacity: 0.7;
+    }
+    @media (max-width: 750px) {
+      order: 1;
+      margin-top: 20px;
     }
   }
 
@@ -52,6 +61,9 @@
     color: $prim-grey;
     margin-top: 50px;
     text-align: center;
+    @media (max-width: 750px) {
+      margin-top: 20px;
+    }
   }
 
   .cart-line {
