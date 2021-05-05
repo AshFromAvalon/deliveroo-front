@@ -3,15 +3,11 @@ import Counter from "../Counter/index";
 import { useState } from "react";
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 
-const Cart = ({ cartLines, setCartLines }) => {
+const Cart = ({ cart, setCart }) => {
   const subTotal = () => {
-    if (cartLines.length > 1) {
-      const prices = cartLines.map((line) => parseFloat(line.price));
-      const sum = prices.reduce((acc, curr) => (acc += curr));
-      return parseFloat(sum).toFixed(2);
-    } else {
-      return parseFloat(cartLines[0].price).toFixed(2);
-    }
+    const mealSum = cart.map((meal) => parseFloat(meal.price) * meal.quantity);
+    const sum = parseFloat(mealSum.reduce((acc, curr) => acc + curr));
+    return sum.toFixed(2);
   };
 
   const total = (shippingFee) => {
@@ -21,11 +17,7 @@ const Cart = ({ cartLines, setCartLines }) => {
 
   const shippingFee = 2.5;
 
-  const uniqueCartLines = cartLines.filter(
-    (line, index) => cartLines.indexOf(line) === index
-  );
-
-  return cartLines.length <= 0 ? (
+  return cart.length <= 0 ? (
     <div className="cart">
       <div className="cart-container">
         <button className="cart-cta--disabled">Valider mon panier</button>
@@ -36,19 +28,15 @@ const Cart = ({ cartLines, setCartLines }) => {
     <div className="cart">
       <div className="cart-container">
         <button className="cart-cta">Valider mon panier</button>
-        {uniqueCartLines.map((line) => {
+        {cart.map((meal) => {
           return (
-            <div key={line.id} className="cart-line">
+            <div key={meal.id} className="cart-line">
               <div className="cart-line-counter">
-                <Counter
-                  cartLines={cartLines}
-                  setCartLines={setCartLines}
-                  line={line}
-                />
-                <span className="cart-line-counter--title">{line.title}</span>
+                <Counter cart={cart} setCart={setCart} meal={meal} />
+                <span className="cart-line-counter--title">{meal.title}</span>
               </div>
               <span className="cart-line-price">
-                {line.price.replace(".", ",")} €
+                {meal.price.replace(".", ",")} €
               </span>
             </div>
           );

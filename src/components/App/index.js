@@ -18,7 +18,7 @@ function App() {
   // Loading state for UseEffect
   const [isLoading, setisLoading] = useState(true);
   // Array for Cart component
-  const [cartLines, setCartLines] = useState([]);
+  const [cart, setCart] = useState([]);
   // Fetch data
   const fetchData = async () => {
     try {
@@ -70,13 +70,13 @@ function App() {
                     key={index}
                     name={category.name}
                     meals={category.meals}
-                    cartLines={cartLines}
-                    setCartLines={setCartLines}
+                    cart={cart}
+                    setCart={setCart}
                   />
                 );
               })}
           </div>
-          <Cart cartLines={cartLines} setCartLines={setCartLines} />
+          <Cart cart={cart} setCart={setCart} />
         </div>
       </div>
     </div>

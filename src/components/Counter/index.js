@@ -2,7 +2,7 @@ import "./style.counter.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 
-const Counter = ({ cartLines, setCartLines, line }) => {
+const Counter = ({ cart, setCart, meal }) => {
   const iconPlus = (
     <FontAwesomeIcon icon={faPlus} className="counter-btn--icon" />
   );
@@ -11,18 +11,19 @@ const Counter = ({ cartLines, setCartLines, line }) => {
   );
 
   const handleClickPlus = () => {
-    line.quantity += 1;
-    const newLines = [...cartLines];
-    newLines.push(line);
-    setCartLines(newLines);
+    const newCart = [...cart];
+    meal.quantity++;
+    setCart(newCart);
   };
 
   const handleClickMinus = () => {
-    line.quantity -= 1;
-    const newLines = [...cartLines];
-    const lineToRemove = newLines.find((item) => item === line);
-    newLines.splice(newLines.indexOf(lineToRemove), 1);
-    setCartLines(newLines);
+    const newCart = [...cart];
+    if (meal.quantity === 1) {
+      newCart.splice(newCart.indexOf(meal), 1);
+    } else {
+      meal.quantity--;
+    }
+    setCart(newCart);
   };
 
   return (
@@ -30,7 +31,7 @@ const Counter = ({ cartLines, setCartLines, line }) => {
       <div className="counter-btn" onClick={handleClickMinus}>
         {iconMinus}
       </div>
-      <div className="counter-count">{line.quantity}</div>
+      <div className="counter-count">{meal.quantity}</div>
       <div className="counter-btn" onClick={handleClickPlus}>
         {iconPlus}
       </div>
