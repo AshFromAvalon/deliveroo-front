@@ -5,6 +5,7 @@
 * [General info](#general-info)
 * [Features](#features)
 * [Demo](#demo)
+* [Technologies](#technologies)
 * [Setup](#setup)
 
 ## General info
@@ -32,6 +33,14 @@ Front end is hosted on Netlify and available, [click here to try it](https://tho
 
 ![Deliveroo-2](https://user-images.githubusercontent.com/71220636/122900957-65df2f00-d34d-11eb-8f3d-4f12e86e9980.gif)
 
+## Technologies
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+* react version: 17.0.2
+* node-sass version: 4.14.1
+* axios version: 0.21.1 
+
 
 ## Setup
 To run this project, install it locally using yarn:
@@ -43,5 +52,5 @@ $ yarn start
 ```
 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
