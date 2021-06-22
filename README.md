@@ -43,14 +43,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## Setup
-To run this project, install it locally using yarn:
+To run this project, clone it, then go it's root directory and install the dependencies using yarn commands:
 
 ```
-$ cd ../lorem
+$ cd ../root directory
 $ yarn install
 $ yarn start
 ```
-
-
-
-
