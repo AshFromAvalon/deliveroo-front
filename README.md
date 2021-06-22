@@ -23,7 +23,7 @@ It's main purspose is to explore basic state management with React.
 
 ## Demo 
 
-Front end is hosted on Netlify and available, [click here to try it](https://thomas-lebihan-deliveroo-clone.netlify.app/). 
+Front end is hosted on Netlify: [click here to try it](https://thomas-lebihan-deliveroo-clone.netlify.app/). 
 
 #### Cart Features
 
