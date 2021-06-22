@@ -2,13 +2,13 @@
 
 ## Table of content 
 
-* [General info](#general-info)
+* [General Info](#general-info)
 * [Features](#features)
 * [Demo](#demo)
 * [Technologies](#technologies)
-* [Setup](#setup)
+* [How to use](#how-to-use)
 
-## General info
+## General Info
 
 This project is a ligth replica of a Deliverro Restaurant page.
 It's main purspose is to explore basic state management with React.
@@ -25,7 +25,7 @@ It's main purspose is to explore basic state management with React.
 
 Front end is hosted on Netlify and available, [click here to try it](https://thomas-lebihan-deliveroo-clone.netlify.app/). 
 
-#### Cart features
+#### Cart Features
 
 ![Deliveroo-1](https://user-images.githubusercontent.com/71220636/122900047-a4c0b500-d34c-11eb-9eca-b56b2e7deeb0.gif)
 
@@ -43,10 +43,20 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 
 ## Setup
-To run this project, clone it, then go it's root directory and install the dependencies using yarn commands:
+To clone and run this application, you'll need [Git](https://git-scm.com/) and [Node.js](https://nodejs.org/en/download/) (which comes with [npm](http://npmjs.com/)) installed on your computer. From your command line:
 
-```
-$ cd ../root directory
+```diff
+# Clone this repository
+$ git clone git@github.com:AshFromAvalon/deliveroo-front.git
+
+# Go into the repository
+$ cd deliveroo-front
+
+# Install dependencies
 $ yarn install
+
+# Run the app
 $ yarn start
 ```
+
+
